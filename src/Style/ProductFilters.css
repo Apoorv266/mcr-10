@@ -1,0 +1,13 @@
+.new-btn{
+    height: 40px;
+    width: 100px;
+    background-color: #027BFF;
+    font-size: 18px;
+    border: none;
+    border-radius: 10px;
+    color: white;
+}
+
+.productFilter-main{
+    margin-top: 20px;
+}

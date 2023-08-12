@@ -3,6 +3,7 @@ import './App.css';
 import SideBar from './Components/SideBar';
 import Inventory from "./Pages/Inventory";
 import Department from "./Pages/Department"
+import Product from './Pages/Product';
 function App() {
   return (
     <div className="App">
@@ -11,7 +12,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Inventory />} />
           <Route path="/departments" element={<Department/>} />
-          {/* <Route /> */}
+          <Route path="/products" element={<Product/>}/>
         </Routes>
       </div>
     </div>
