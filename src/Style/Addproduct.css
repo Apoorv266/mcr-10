@@ -1,0 +1,15 @@
+.addproduct-main{
+    flex-direction: column;
+    gap: 20px;
+}
+
+.addproduct-main input , textarea, .addproduct-main select{
+width: 70%;
+height: 40px;
+border-radius: 10px;
+border: 1px solid black;
+}
+
+textarea{
+    height: 60px;
+}

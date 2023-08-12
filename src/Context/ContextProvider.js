@@ -23,13 +23,12 @@ const ContextProvider = ({ children }) => {
 
     const filterFunc = () => {
         let filterArr
-        
+
         let newArr = state.LSIFilter ? state.data.filter(item => item.stock <= 10) : state.data
 
         let categoryFilter = state.dprtFilter === "All" ? newArr : newArr.filter((item) => item.department === state.dprtFilter)
 
         filterArr = state.sortFilter === "none" ? categoryFilter : [...categoryFilter].sort((a, b) => {
-
             switch (state.sortFilter) {
                 case "Name":
                     return a.name.localeCompare(b.name);
@@ -39,7 +38,6 @@ const ContextProvider = ({ children }) => {
                     return a.stock - b.stock
             }
         })
-
         return filterArr
     }
 

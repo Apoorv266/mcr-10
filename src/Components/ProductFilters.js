@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import { productContext } from '../Context/ContextProvider'
 import "../Style/ProductFilters.css"
+import { Link } from 'react-router-dom'
 
 const ProductFilters = () => {
   const { state, dispatch } = useContext(productContext)
@@ -34,7 +35,9 @@ const ProductFilters = () => {
         <option value="Stock">Stock</option>
       </select>
 
+<Link to={"/add-product"}>
       <button className='new-btn'>New</button>
+      </Link>
     </div>
   )
 }

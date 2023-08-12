@@ -28,3 +28,7 @@
 color: white;
 text-decoration: none;
 }
+
+.clickable, button{
+  cursor: pointer;
+}

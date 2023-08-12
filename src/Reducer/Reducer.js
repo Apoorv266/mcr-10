@@ -16,6 +16,11 @@ export const reducerFunc = (state, action) => {
             return { ...state, LSIFilter: payload }
         case "SORT_FILTER":
             return { ...state, sortFilter: payload }
+            case "ADD_PRODUCT":
+                
+                const obj = {...payload, id : state.data.length + 1, price : parseInt(payload.price), stock :parseInt(payload.stock), delivered : parseInt(payload.delivered)}
+
+                return { ...state, data: [...state.data,obj] }
         default:
             return state
     }

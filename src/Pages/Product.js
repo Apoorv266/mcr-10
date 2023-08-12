@@ -19,7 +19,7 @@ const Product = () => {
           <th>Supplier</th>
         </tr>
 
-        {filterFunc()?.map((item) => {
+        {filterFunc()?.length > 0 ? filterFunc()?.map((item) => {
           return (
             <tr key={item.id}>
               <td>
@@ -37,7 +37,7 @@ const Product = () => {
               <td>{item.supplier}</td>
             </tr>
           );
-        })}
+        }) :<tr><td className="empty-product" colSpan={10}>No products to display</td></tr> }
       </table>
     </div>
   );
