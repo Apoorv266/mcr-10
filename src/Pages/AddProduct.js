@@ -1,8 +1,10 @@
 import React, { useContext, useState } from "react";
 import "../Style/Addproduct.css";
 import { productContext } from "../Context/ContextProvider";
+import { useNavigate } from "react-router-dom";
 const AddProduct = () => {
   const { dispatch } = useContext(productContext);
+  const navigate = useNavigate()
   const inputValues = {
     name: "",
     department: "",
@@ -24,6 +26,7 @@ const AddProduct = () => {
     if (!Object.values(value).includes("")) {
       dispatch({type : "ADD_PRODUCT", payload :value })
       setvalue(inputValues)
+      navigate("/products")
     }
   };
   return (
