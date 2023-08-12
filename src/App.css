@@ -23,3 +23,8 @@
   justify-content: space-around;
   align-items: center;
 }
+
+.link{
+color: white;
+text-decoration: none;
+}

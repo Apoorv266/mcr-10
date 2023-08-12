@@ -1,8 +1,8 @@
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import SideBar from './Components/SideBar';
-import Inventory from './Components/Inventory';
-
+import Inventory from "./Pages/Inventory";
+import Department from "./Pages/Department"
 function App() {
   return (
     <div className="App">
@@ -10,8 +10,8 @@ function App() {
       <div className="left-bar">
         <Routes>
           <Route path="/" element={<Inventory />} />
-          <Route />
-          <Route />
+          <Route path="/departments" element={<Department/>} />
+          {/* <Route /> */}
         </Routes>
       </div>
     </div>
