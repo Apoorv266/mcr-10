@@ -1,0 +1,11 @@
+.sidebar-main{
+    width: 20%;
+    background-color: #202124;
+    height: 100vh;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    gap: 60px;
+}
