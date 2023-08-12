@@ -17,15 +17,11 @@ const ProductFilters = () => {
       </select>
 
       <div>
-        <input
+        <label> <input
           type="checkbox"
           checked={state.LSIFilter}
           onChange={(e) => dispatch({ type: "LSI_FILTER", payload: !state.LSIFilter })}
-        />
-        <span
-        >
-          Low stock items
-        </span>
+        />Low stock items</label>
       </div>
 
       <select onChange={(e) => dispatch({ type: "SORT_FILTER", payload: e.target.value })} defaultValue={"none"}>

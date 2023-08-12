@@ -1,10 +1,23 @@
-import React, { createContext, useReducer } from 'react'
+import React, { createContext, useEffect, useReducer } from 'react'
 import { initialData, reducerFunc } from '../Reducer/Reducer'
 
 export const productContext = createContext()
-const ContextProvider = ({ children }) => {
-    const [state, dispatch] = useReducer(reducerFunc, initialData)
 
+const getStorageItem = () =>{
+    if (localStorage.getItem("state")) {
+       return JSON.parse(localStorage.getItem("state"))
+    }else{
+       return initialData
+    }
+}
+const ContextProvider = ({ children }) => {
+    const [state, dispatch] = useReducer(reducerFunc,getStorageItem() )
+
+
+    useEffect(() => {
+     localStorage.setItem("state", JSON.stringify(state))
+    }, [state])
+    
     const inventoryFunc = () => {
         const obj = state.data.reduce((acc, curr) => {
             return {
@@ -41,7 +54,6 @@ const ContextProvider = ({ children }) => {
         return filterArr
     }
 
-    console.log("func", filterFunc())
     return (
         <productContext.Provider value={{ state, dispatch, inventoryFunc, filterFunc }}>{children}</productContext.Provider>
     )

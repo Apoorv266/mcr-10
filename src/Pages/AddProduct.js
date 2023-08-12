@@ -30,8 +30,8 @@ const AddProduct = () => {
     <div className="addproduct-main flex-center">
       <h1>Add new Product !</h1>
       <h4>Department : </h4>
-      <select name="department" onChange={handleInputFunc}>
-        <option value="All" selected disabled>
+      <select name="department" onChange={handleInputFunc} defaultValue={"All"}>
+        <option value="All" disabled>
           Select department
         </option>
         <option value="Kitchen" name="department">

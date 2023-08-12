@@ -17,3 +17,15 @@
 font-size: 20px;
 margin-top: 10px;
 }
+
+.stock-txt{
+color: #04B203;
+}
+
+.delivered-txt{
+color: #FFA500;
+}
+
+.LSI-txt{
+color: #FE1D1B;
+}

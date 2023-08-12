@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import ProductFilters from "../Components/ProductFilters";
 import "../Style/Product.css";
 import { productContext } from "../Context/ContextProvider";
+import { Link } from "react-router-dom";
 
 const Product = () => {
   const { filterFunc } = useContext(productContext);
@@ -30,14 +31,16 @@ const Product = () => {
                   width={"250px"}
                 />
               </td>
-              <td>{item.name}</td>
+            
+                <td>  <Link to={`/product/${item.id}`} >{item.name} </Link></td>
+             
               <td>{item.description}</td>
               <td>${item.price}</td>
               <td>{item.stock}</td>
               <td>{item.supplier}</td>
             </tr>
           );
-        }) :<tr><td className="empty-product" colSpan={10}>No products to display</td></tr> }
+        }) : <tr><td className="empty-product" colSpan={10}>No products to display</td></tr>}
       </table>
     </div>
   );
